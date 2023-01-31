@@ -1,0 +1,30 @@
+const url = "";
+
+fetch(url)
+  .then((res) => {
+    res.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => console.log(err));
+
+//async/ await
+
+const getData = async () => {
+  try {
+      const res = await fetch(url, {
+        method: 'POST'
+    });
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+//employyee- name, role, age, _id, createdAt, updatedAt
+
+//VIEWS - 
+landing page - all employees
+--> details- single employee (delete)
+--> Create - post to the server to add to the DB--> Homepage
